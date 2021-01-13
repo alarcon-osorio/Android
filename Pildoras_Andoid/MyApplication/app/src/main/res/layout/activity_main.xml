@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+
+    android:orientation="vertical"
+    app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contador de pulsaciones"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053" />
+        android:text="Contador:"
+        android:textSize="36sp" />
 
     <Button
-        android:id="@+id/incrementar"
+        android:id="@+id/incremeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Incrementar"
-        app:layout_constraintEnd_toEndOf="@+id/reset"
-        app:layout_constraintStart_toStartOf="@+id/reset"
-        tools:layout_editor_absoluteY="341dp" />
-
-    <Button
-        android:id="@+id/decrementar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Decrementar"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="469dp" />
+        android:onClick="incrementaContador"
+        android:text="Incrementa" />
 
     <Button
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reset"
-        app:layout_constraintEnd_toEndOf="@+id/decrementar"
-        app:layout_constraintStart_toStartOf="@+id/decrementar"
-        tools:layout_editor_absoluteY="405dp" />
+        android:onClick="resetContador"
+        android:text="Reset" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/resta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="decrementaContador"
+        android:text="Resta" />
+
+</LinearLayout>
